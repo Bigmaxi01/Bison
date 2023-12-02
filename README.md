@@ -18,3 +18,7 @@ Run this script after the custom readsb install to install the rest of the Wingb
 ```
 sudo bash -c "$(wget -O - https://raw.githubusercontent.com/Bigmaxi01/Bison/master/Wingbits_install_script_moded_for_Bison.sh)"
 ```
+```
+curl -sL https://raw.githubusercontent.com/Bigmaxi01/Bison/master/Wingbits_install_script_moded_for_Bison.sh | sudo bash
+
+```
