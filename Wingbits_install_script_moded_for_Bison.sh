@@ -112,8 +112,8 @@ run_command "Installing vector" \
   "curl -1sLf 'https://repositories.timber.io/public/vector/cfg/setup/bash.deb.sh' | sudo -E bash" \
   "apt-get -y install vector" \
   "mkdir -p /etc/vector" \
-  "touch /etc/vector/vector.toml" \
-  "curl -o /etc/vector/vector.toml 'https://gitlab.com/wingbits/config/-/raw/master/vector.toml'" \
+  "touch /etc/vector/vector.yaml" \
+  "curl -o /etc/vector/vector.yaml 'https://gitlab.com/wingbits/config/-/raw/master/vector.yaml'" \
   "sed -i 's|ExecStart=.*|ExecStart=/usr/bin/vector --watch-config|' /lib/systemd/system/vector.service" \
   "echo \"DEVICE_ID=\\\"$device_id\\\"\" | sudo tee -a /etc/default/vector > /dev/null"
 
@@ -122,7 +122,7 @@ run_command "Installing vector" \
 #     "curl -sL https://github.com/wiedehopf/adsb-scripts/raw/master/readsb-install.sh | bash" \   # Run readsb install first manually
      "sed -i -e 's|After=.*|After=vector.service|' /lib/systemd/system/readsb.service" \
      "sed -i 's|NET_OPTIONS=\".*\"|NET_OPTIONS=\"--net-only --net-connector localhost,30006,json_out\"|' /etc/default/readsb" \
-     "curl -sL https://github.com/wiedehopf/graphs1090/raw/master/install.sh | bash" \ 
+     "curl -sL https://github.com/wiedehopf/graphs1090/raw/master/install.sh | bash"
 
 # Step 6: Reload systemd daemon, enable and start services
 run_command "Starting services" \
