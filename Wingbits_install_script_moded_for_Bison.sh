@@ -118,7 +118,7 @@ run_command "Installing vector" \
   "echo \"DEVICE_ID=\\\"$device_id\\\"\" | sudo tee -a /etc/default/vector > /dev/null"
 
 # Step 5: Download and install readsb
-#     "curl -sL https://github.com/wiedehopf/adsb-scripts/raw/master/readsb-install.sh | bash" \   # Run readsb install first manually - removed this line from below the run_command line...
+#     "curl -sL https://github.com/wiedehopf/adsb-scripts/raw/master/readsb-install.sh | bash" \    Run readsb install first manually - removed this line from below the run_command line...
  run_command "Installing readsb" \
      "sed -i -e 's|After=.*|After=vector.service|' /lib/systemd/system/readsb.service" \
      "sed -i 's|NET_OPTIONS=\".*\"|NET_OPTIONS=\"--net-only --net-connector localhost,30006,json_out\"|' /etc/default/readsb" \
