@@ -1,6 +1,6 @@
 # Bison
 
-This is a repository for scripts for Bison Winbits install on top of piaware system with FR24, FA, RB, etc
+This is a repository for scripts for Bison's Wingbits install on top of piaware system with FR24, FA, RB, etc
 
 ## readsb-install_moded_for_Bison.sh
 Run this script first to install readsb but not remove existing setup like the standard script does.
